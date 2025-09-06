@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://deftvvviwh723"]
+[gd_scene load_steps=11 format=3 uid="uid://deftvvviwh723"]
 
 [ext_resource type="PackedScene" uid="uid://5d2qakxcpiyg" path="res://player.tscn" id="1_p5pve"]
 [ext_resource type="Texture2D" uid="uid://v6j1xg45c65f" path="res://Graphics/Tileset/Background_n_details.png" id="2_urblq"]
@@ -415,6 +415,9 @@ sources/1 = SubResource("TileSetAtlasSource_05x41")
 sources/2 = SubResource("TileSetAtlasSource_gqbix")
 sources/3 = SubResource("TileSetAtlasSource_oysan")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urblq"]
+size = Vector2(167, 81)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -432,7 +435,6 @@ layer_2/name = "Layer2"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-9, -1)
-scale = Vector2(1.08036, 1)
-polygon = PackedVector2Array(1, -1, 13, 560, 175, 560, 181, 638, 8, 644, -57, 349)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(96.5, 601.5)
+shape = SubResource("RectangleShape2D_urblq")
